@@ -16,6 +16,8 @@ def createPrimeNumberArray(n):
 def totient(n, primes):
     #below calculates the result of the product of (1 - 1/p) for each prime p that divides n
     result = 1
+    if prime in primes:
+        return n-1
     for prime in primes:
         if prime > n:
             break
@@ -44,7 +46,7 @@ if n < 2: #make sure the integer is greater than 2
     sys.exit()
 
 #call the functions to create the prime number array and calculate the totient value
-primeArray = createPrimeNumberArray(n) #create the prime number array
+primeArray = createPrimeNumberArray(n+1) #create the prime number array (one was added in case n is a prime number)
 totientValue = totient(n, primeArray) #calculate the totient value
-print("There are {0!s} prime numbers less than {1!s}".format(len(primeArray),n)) #print the number of primes less than n
+print("There are {0!s} prime numbers less than or equal to {1!s}".format(len(primeArray),n)) #print the number of primes less than n
 print("The totient function of {0!s} is {1!s}".format(n,totientValue)) #print the totient value of n
