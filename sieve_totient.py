@@ -16,7 +16,7 @@ def createPrimeNumberArray(n):
 def totient(n, primes):
     #below calculates the result of the product of (1 - 1/p) for each prime p that divides n
     result = 1
-    if prime in primes:
+    if n in primes:
         return n-1
     for prime in primes:
         if prime > n:
